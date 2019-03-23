@@ -1,19 +1,19 @@
 # About me  
 ## Username and Contact Information  
-**Name** :            Shubham Maddhashiya
+**Name** :            Akash Mondal
 
 **University** :      [Indian Institute of Technology (IIT), Kharagpur](http://iitkgp.ac.in)
 
-**Email** :           shubhamsipah@iitkgp.ac.in  
+**Email** :           akashmondalcivil@iitkgp.ac.in  
 
-**Gitter Handle** :   sipah00 
+**Gitter Handle** :   akashmondal1810 
 
-**Github Username** : [sipah00](https://github.com/sipah00)  
+**Github Username** : [akashmondal1810](https://github.com/akashmondal1810/)  
 
 **Time Zone** : IST (UTC +5:30)
 
 ## Personal Background  
-Hello, I am Shubham Maddhashiya, a second year undergraduate student at IIT Kharagpur, India. I am pursuing a degree in Ocean Engineering. I work on Ubuntu 16.04 LTS. I am proficient in C, C++, Python. I am moderately proficient in Julia.  
+Hello, I am Akash Mondal, a third year undergraduate student at IIT Kharagpur, India. I am pursuing a degree in Civil Engineering. I work on Ubuntu 16.04 LTS. I am proficient in C, C++, Python. I am moderately proficient in Julia.  
 ## Relevant Courses  
 * Numerical Solution of Ordinary and Partial Differential Equation  
 * Linear Algebra  
