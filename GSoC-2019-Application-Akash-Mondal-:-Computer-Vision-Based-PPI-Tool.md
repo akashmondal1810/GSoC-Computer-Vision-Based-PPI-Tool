@@ -15,8 +15,9 @@
 ## Personal Background  
 Hello, I am Akash Mondal, a third year undergraduate student at IIT Kharagpur, India. I am pursuing a degree in Civil Engineering. I work on Ubuntu 16.04 LTS. I am proficient in C, C++, Python. I am moderately proficient in Julia.  
 ## Relevant Courses  
-* Numerical Solution of Ordinary and Partial Differential Equation  
-* Linear Algebra  
+* Machine Learning  
+* Deep Learning
+* Probability and Statistics
 
 ## Contribution to OrdinaryDiffEq.jl
 I started contributing to OrdinaryDiffEq.jl in early February. I implemented Native Adams Bashforth and Adams Moulton methods and I learned a lot about code base of OrdinaryDiffEq.jl.
@@ -24,7 +25,7 @@ I started contributing to OrdinaryDiffEq.jl in early February. I implemented Nat
 *  (**Merged**) `added adams_bashforth (4 steps) and adams_moulton (3 steps) methods`[#269](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/269)
 *  (**Merged**) `added Adams-Bashforth (5 Steps) and Adams-Moulton (4 Steps) Methods`[#272](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/272)
 
-## Experience with Julia  
+## Experience with Computer Vision  
 I have been using Julia for last two months. I like Julia because of its performance and multiple dispatch feature. Julia produces similar speed to C, while having a code similar to Python or Matlab. 
 
 # The Project
