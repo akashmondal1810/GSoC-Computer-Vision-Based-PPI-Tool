@@ -354,7 +354,7 @@ I expect to work full time on the project that is 40 or more hours a week.
 
 # Timeline (tentative)  
 #### Community Bonding period (23rd April - 14th May)  
-The primary focus in this period will be to have extensive discussions with my mentor on the implementation of Variable step size and variable order variable step size methods and modification in conditions of changing order and step size as it can be modified to achieve better result and implementation of IMEX methods.
+The primary focus in this period will be to have extensive discussions with my mentor on data collection and preprocessing of each labels for  the implementation of Variable step size and variable order variable step size methods and modification in conditions of changing order and step size as it can be modified to achieve better result and implementation of IMEX methods.
 
 #### Week 1 and 2
 ##### Goal :
