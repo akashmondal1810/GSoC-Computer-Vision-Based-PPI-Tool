@@ -37,7 +37,7 @@ The aim of this project is to add variable step size, variable order variable st
 
 # The Plan  
 I propose to implement following methods :
-1. Variable Step Size Multistep Methods
+1. training the model
 2. Variable Order Variable Step Size Multistep Methods  
 3. IMEX Multistep Methods  
 4. IMEX Runge-Kutta Methods  
