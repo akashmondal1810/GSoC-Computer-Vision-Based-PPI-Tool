@@ -387,8 +387,7 @@ The primary focus in this period will be to have extensive discussions with my m
 * I also aim to work towards implementing the stretch goals.
 
 ## Any Plan/Commitment (During GSoC)
-I have no major plans for summer and I will contribute full time for 40 or more hours a week. My college restarts in mid-July but I will still be able to contribute full time since there will be no exams or tests.
-
+I have no other commitments this summer. For GSoC 2018, I am only applying for Mifos. So if selected, I will easily be able to dedicate 40-50 hours a week to Mifos. My college restarts in mid-July but I will still be able to contribute full time since there will be no exams or tests.
 # References
 [1] E. Hairer, S.R Nørsett and G. Wanner, Solving Ordinary Differential Equations I: Nonstiff Problems (Springer, New York, 1993).  
 [2] E. Hairer and G. Wanner, Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems (Springer, New York, 1991).  
