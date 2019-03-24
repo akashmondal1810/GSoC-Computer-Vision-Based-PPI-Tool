@@ -13,7 +13,7 @@
 **Time Zone** : IST (UTC +5:30)
 
 ## Personal Background  
-Hello, I am Akash Mondal, a third year undergraduate student at IIT Kharagpur, India. I am pursuing a degree in Civil Engineering. I work on Ubuntu 16.04 LTS. I am proficient in C, C++, Python. I am moderately proficient in Julia.  
+Hello, I am Akash Mondal, a third year undergraduate student at IIT Kharagpur, India. I am pursuing a degree in Civil Engineering. I work on Ubuntu 18.04 LTS. I am proficient in Machine Learning, Deep Learning, Python, C, C++.
 ## Relevant Courses  
 * Machine Learning  
 * Deep Learning
@@ -26,7 +26,7 @@ I started contributing to OrdinaryDiffEq.jl in early February. I implemented Nat
 *  (**Merged**) `added Adams-Bashforth (5 Steps) and Adams-Moulton (4 Steps) Methods`[#272](https://github.com/JuliaDiffEq/OrdinaryDiffEq.jl/pull/272)
 
 ## Experience with Computer Vision  
-I have been using Julia for last two months. I like Julia because of its performance and multiple dispatch feature. Julia produces similar speed to C, while having a code similar to Python or Matlab. 
+I have been Working with Computer Vision for last two years and have worked in many computer vision projects earlier on like Skin lesion detection using CNN, CNN-Keras server to classify images, precise localization using transfer learning etc.
 
 # The Project
 ## The Problem and Motivations  
