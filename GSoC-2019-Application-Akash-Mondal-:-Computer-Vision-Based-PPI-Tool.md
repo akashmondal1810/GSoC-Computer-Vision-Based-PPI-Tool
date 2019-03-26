@@ -30,10 +30,17 @@ I have been Working with Computer Vision for last two years and have worked in m
 
 # The Project
 ## The Problem and Motivations  
-* An efficient integrator must be able to change the step size and order, in order to control the errors of the method and to ensure stability properties.
-* If the ODE (or system of ODEs) has a stiff part and an imaginary part, Using a purely implicit method may be acceptable in this scenario, or depending on the problem, may dissipate the imaginary part to an unwanted extent.Further, one could envision a situation where the imaginary part is nonlinear and the stiff part linear in this scenario, using an implicit method is the worst of both worlds, we end up solving a nonlinear problem, and it isn’t one we want to solve (possibly due to dissipation). On the other hand, explicit methods are often unacceptable for stiff problems due to the limited size of their stability regions.
-
-The aim of this project is to add variable step size, variable order variable step size multistep methods, Implicit-Explicit (IMEX) multistep and IMEX Runge-Kutta Methods. 
+To build an AI-powered tool using computer Vision to capture responses for the 10-question Poverty Probability Index (PPI) Scorecard using the simple image capture via a smartphone camera. The Indicators are:
+*  How many household members are there?
+*  Does the household possess a refrigerator?
+*  What is the general education level of the female head/spouse?
+*  Does the household possess a stove/gas burner?
+*  Does the household possess a pressure cooker/pressure pan?
+*  Does the household possess a television?
+*  Does the household possess an electric fan?
+*  Does the household possess an almirah/dressing table?
+*  Does the household possess a chair, stool, bench, or table?
+*  Does the household possess a motorcycle, scooter, motor car, or jeep?
 
 # The Plan  
 I propose to implement following methods :
