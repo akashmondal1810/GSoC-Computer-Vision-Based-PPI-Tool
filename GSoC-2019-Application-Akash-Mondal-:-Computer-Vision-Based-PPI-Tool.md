@@ -44,7 +44,7 @@ To build an AI-powered tool using computer Vision to capture responses for the 1
 
 # The Plan  
 I propose to implement following methods :
-1. training the model
+1. Object Localization and Detection using Google's Cloud Vision
 2. Variable Order Variable Step Size Multistep Methods  
 3. IMEX Multistep Methods  
 4. IMEX Runge-Kutta Methods  
@@ -53,8 +53,8 @@ I propose to implement following methods :
 1. Implementation of variable time step variable order BDF method  
 2. Implementation of variable time step variable order SBDF method
 
-## 1. Variable Step Size Multistep Methods  
-An efficient integrator must be able to change the step size. However, changing the step size with multistep methods is difficult since the formulas require the numerical approximations at equidistant points. There are in principle two possibilities for overcoming this difficulty [1]:
+## 1. Object Localization and Detection using Google's Cloud Vision  
+To serve the purpose of this project we only need the model to efficiently detect the objects (for question no 2 to 6) in the image and extract multiple objects in the image (to count no of persons in the image). The Cloud Vision API can detect and extract multiple objects in an image with Object Localization.Object localization identifies multiple objects in an image and provides a `LocalizedObjectAnnotation` for each object in the image. Each `LocalizedObjectAnnotation` identifies information about the object, the position of the object, and rectangular bounds for the region of the image that contains the object. An efficient integrator must be able to change the step size. However, changing the step size with multistep methods is difficult since the formulas require the numerical approximations at equidistant points. There are in principle two possibilities for overcoming this difficulty [1]:
 1. Use polynomial interpolation to reproduce the starting values at the new (equidistant) grid.  
 2. Construct methods which are adjusted to variable grid points.  
 ##### Variable Step Size Adams Methods  
