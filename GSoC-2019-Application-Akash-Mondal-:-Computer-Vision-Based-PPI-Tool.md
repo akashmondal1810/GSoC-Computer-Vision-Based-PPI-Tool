@@ -79,7 +79,7 @@ where `c_{j,q}` can be calculated by this relation :
 ![c](https://user-images.githubusercontent.com/23627932/37811819-3633581c-2e82-11e8-8fef-588537f61f93.png)  
 All above formulas are described in [1].  
 Result of Vision API about this photo :
-![Selection_001](https://user-images.githubusercontent.com/28530297/55230114-db2e2900-5244-11e9-80a2-0251ca7cf962.png)
+![Selection_003](https://user-images.githubusercontent.com/28530297/55230466-ee8dc400-5245-11e9-96a4-eaf413c9ab52.png)
 ```python
 # function for calculating g
 image_to_open = 'images/face.jpg'
@@ -97,8 +97,8 @@ face_content = face_response.face_annotations
 #Face3: "detectionConfidence": 0.9981432
 #Face4: "detectionConfidence": 0.9982381
 #Face5: "detectionConfidence": 0.9996636
-
 ```
+![akash-photo](https://user-images.githubusercontent.com/28530297/55230332-87700f80-5245-11e9-8f82-6ce3c1af56c7.png)
 
 ## 2. Variable Order Variable Step Size Multistep Methods   
 #### Determining Optimal Step Size  
