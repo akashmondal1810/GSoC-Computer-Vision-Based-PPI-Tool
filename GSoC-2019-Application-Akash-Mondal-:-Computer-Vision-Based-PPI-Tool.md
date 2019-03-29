@@ -55,8 +55,10 @@ I propose to implement following methods :
 
 ## 1. Object Localization and Detection using Google's Cloud Vision  
 To serve the purpose of this project we only need the model to efficiently detect the objects (for question no 2 to 6) in the image and extract multiple objects in the image (to count no of persons in the image). The Cloud Vision API can detect and extract multiple objects in an image with Object Localization.Object localization identifies multiple objects in an image and provides a `LocalizedObjectAnnotation` for each object in the image. Each `LocalizedObjectAnnotation` identifies information about the object, the position of the object, and rectangular bounds for the region of the image that contains the object. An efficient integrator must be able to change the step size. However, changing the step size with multistep methods is difficult since the formulas require the numerical approximations at equidistant points. There are in principle two possibilities for overcoming this difficulty [1]:
-1. Use polynomial interpolation to reproduce the starting values at the new (equidistant) grid.  
-2. Construct methods which are adjusted to variable grid points.  
+1. API’s REST architecture and the widely available in various languages package make it easier to accessible  
+2. Construct methods which are adjusted to variable grid points. 
+
+
 ##### Variable Step Size Adams Methods  
 The explicit Adams method is :  
 ![5 4](https://user-images.githubusercontent.com/23627932/37771542-e8604be2-2dfd-11e8-8329-4e005c14ddff.png)  
@@ -77,51 +79,24 @@ where `c_{j,q}` can be calculated by this relation :
 ![c](https://user-images.githubusercontent.com/23627932/37811819-3633581c-2e82-11e8-8fef-588537f61f93.png)  
 All above formulas are described in [1].  
 Following functions calculate coefficients using these relations [6] :  
-```julia
+```python
 # function for calculating g
-function g_coefs!(g, c, dt, t, t_np1, n, k)
-    for i = 1:k
-      for q = 1:((k)-(i-1))
-        if i == 1
-          c[i,q] = 1/q
-        elseif i == 2
-          c[i,q] = 1/q/(q+1)
-        else
-          c[i,q] = c[i-1,q] - c[i-1,q+1] * dt/(t_np1-t[n-(i-1)+1])
-        end
-      end
-      g[i]=c[i,1]
-    end
-    return nothing
-end
+image_to_open = 'images/face.jpg'
 
-# function for calculating ϕ and ϕstar
-function ϕ_and_ϕstar_coefs!(ϕstar_n, ϕ_n, ϕstar_nm1, β, dy_n, t, t_np1, n, k)
-    for i in k
-      if i == 1
-        β[i] = 1
-        ϕ_n[i] = dy_n
-        ϕstar_n[i] = dy_n
-      else
-        β[i] = β[i-1] * (t_np1 - t[n-(i-1)+1]) / (t[n] - t[n-(i-1)])
-        ϕ_n[i] =  ϕ_n[i-1] - ϕstar_nm1[i-1]
-        ϕstar_n[i] = β[i] * ϕ_n[i]
-      end
-    end
-    return nothing
-end
+with open(image_to_open, 'rb') as image_file:
+    content = image_file.read()
+image = vision.types.Image(content=content)
 
-# function for calculating ϕ_{n+1,j}
-function ϕ_coefs!(ϕ_np1, ϕstar_n, dy_np1, k)
-    for i  in k
-      if i == 1
-          ϕ_np1[i] = dy_np1
-      else
-        ϕ_np1[i] = ϕ_np1[i-1] - ϕstar_n[i-1]
-      end
-    end
-    return nothing
-end
+face_response = client.face_detection(image=image)
+face_content = face_response.face_annotations
+
+#detection_confidence:
+#Face1: "detectionConfidence": 0.9999549
+#Face2: "detectionConfidence": 0.9938829
+#Face3: "detectionConfidence": 0.9981432
+#Face4: "detectionConfidence": 0.9982381
+#Face5: "detectionConfidence": 0.9996636
+
 ```
 
 ## 2. Variable Order Variable Step Size Multistep Methods   
