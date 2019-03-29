@@ -59,26 +59,10 @@ To serve the purpose of this project we only need the model to efficiently detec
 2. Construct methods which are adjusted to variable grid points. 
 
 
-##### Variable Step Size Adams Methods  
-The explicit Adams method is :  
-![5 4](https://user-images.githubusercontent.com/23627932/37771542-e8604be2-2dfd-11e8-8329-4e005c14ddff.png)  
-And the extension of this method to variable step size is :  
-![5 55](https://user-images.githubusercontent.com/23627932/37771575-116e7c66-2dfe-11e8-9a02-197ba75feeba.png)  
-And the variable step size implicit Adams methods :  
-![5 7](https://user-images.githubusercontent.com/23627932/37771603-2a99c8e4-2dfe-11e8-8ce0-6a26829d7ba4.png)  
-here ![pn 1](https://user-images.githubusercontent.com/23627932/37771724-773d81d6-2dfe-11e8-9ec8-2fd15174f348.png) can be obtained by the explicit Adams method.  
-Now in order to implement these methods, first we have to get values of `g_{j,n}`, `ϕ_{j,n}` and `ϕstar_{j,n}`, using Recurrence Relations for `g_{j,n}`, `ϕ_{j,n}` and `ϕstar_{j,n}` required coefficients can be calculated.  
-### Recurrence Relations  
-Relation between `ϕ` and `ϕstar`  
-![recurrel](https://user-images.githubusercontent.com/23627932/37772149-c8d6dfc8-2dff-11e8-8ccd-74aab37f6f63.png)  
-And for `β_{j,n}`  
-![beta](https://user-images.githubusercontent.com/23627932/37811814-327f07c0-2e82-11e8-8220-651527af891b.png)   
-And for `g_{j,n}`   
-![gjc](https://user-images.githubusercontent.com/23627932/37811817-34fdbab4-2e82-11e8-9e21-d92e23cce3f0.png)  
-where `c_{j,q}` can be calculated by this relation :  
-![c](https://user-images.githubusercontent.com/23627932/37811819-3633581c-2e82-11e8-8fef-588537f61f93.png)  
-All above formulas are described in [1].  
-Result of Vision API about this photo :
+##### Numbers of household members  
+  
+Result of Vision API about this photo:
+
 ![Selection_003](https://user-images.githubusercontent.com/28530297/55230466-ee8dc400-5245-11e9-96a4-eaf413c9ab52.png)
 ```python
 # function for calculating g
@@ -91,7 +75,7 @@ image = vision.types.Image(content=content)
 face_response = client.face_detection(image=image)
 face_content = face_response.face_annotations
 
-#detection_confidence:
+#face_content[i].detection_confidence:
 #Face1: "detectionConfidence": 0.9999549
 #Face2: "detectionConfidence": 0.9938829
 #Face3: "detectionConfidence": 0.9981432
@@ -100,6 +84,24 @@ face_content = face_response.face_annotations
 ```
 ![akash-photo](https://user-images.githubusercontent.com/28530297/55230332-87700f80-5245-11e9-8f82-6ce3c1af56c7.png)
 
+Getting the count of persons in an image:
+```python
+# function for calculating no of persons in the image
+def detect_faces(image_path):
+    """Detects faces in an image."""
+    client = vision.ImageAnnotatorClient()
+
+    with io.open(image_path, 'rb') as image_file:
+        content = image_file.read()
+
+    image = vision.types.Image(content=content)
+
+    response = client.face_detection(image=image)
+    faces = response.face_annotations
+    print('No of persons: '+str(len(faces)))
+    
+>> No of persons: 5
+```
 ## 2. Variable Order Variable Step Size Multistep Methods   
 #### Determining Optimal Step Size  
 Staring multistep methods with order one and very small step sizes and therefore self-starting. Suppose after successful numerical integration until `x_n` if further step with step size `h_n` and order `k + 1` is taken, which yields the approximation `y_n+1` to `y(x_n+1)`.  For this step to be successful it must satisfy following equation   
