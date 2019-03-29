@@ -78,7 +78,8 @@ And for `g_{j,n}`
 where `c_{j,q}` can be calculated by this relation :  
 ![c](https://user-images.githubusercontent.com/23627932/37811819-3633581c-2e82-11e8-8fef-588537f61f93.png)  
 All above formulas are described in [1].  
-Following functions calculate coefficients using these relations [6] :  
+Result of Vision API about this photo :
+![Selection_001](https://user-images.githubusercontent.com/28530297/55230114-db2e2900-5244-11e9-80a2-0251ca7cf962.png)
 ```python
 # function for calculating g
 image_to_open = 'images/face.jpg'
