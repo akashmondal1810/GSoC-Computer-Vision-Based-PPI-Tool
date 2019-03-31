@@ -122,24 +122,34 @@ Although there's refrigerator in it but it fails to detect. AutoML Vision Beta m
 
 ## 2. Variable Order Variable Step Size Multistep Methods   
 #### Determining Optimal Step Size  
-Staring multistep methods with order one and very small step sizes and therefore self-starting. Suppose after successful numerical integration until `x_n` if further step with step size `h_n` and order `k + 1` is taken, which yields the approximation `y_n+1` to `y(x_n+1)`.  For this step to be successful it must satisfy following equation   
-![eq7 4](https://user-images.githubusercontent.com/23627932/37773683-3dec977c-2e04-11e8-8804-0e8547db78ac.png)  
-where `LE_k+1` can be computed as  
-![7 3](https://user-images.githubusercontent.com/23627932/37774029-215b8cac-2e05-11e8-962d-0f79aeb97b45.png)  
-After the successful step, next optimal step size would be    
-![7 5](https://user-images.githubusercontent.com/23627932/37774093-485fc264-2e05-11e8-8ebc-334a6c975ff5.png)  
+  
 One possible implementation with some modification :  
-```julia
+```python
 # Here k is the order of the method and h is step size
-function chooseNextStep(le_k, k, h)
-  if le_k < 2^(-k-2)
-    return 2 * h
-  elseif le_k < 1/2
-    return h
-  else
-    return h * max(1/2, min(9/10, (1/2*le_k)^(k+1)))
-  end
-end
+
+def CNN():
+    model = Sequential()
+    model.add(Convolution2D(8, 3, 3, border_mode='same',
+                            input_shape=(IMAGE_SIZE, IMAGE_SIZE, 3)))
+    model.add(Activation('relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2), border_mode='same'))
+    model.add(Convolution2D(16, 3, 3, border_mode='same'))
+    model.add(Activation('relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2), border_mode='same'))
+    model.add(Flatten())
+    model.add(Dense(2))
+    model.add(Activation('softmax'))
+    model.compile(optimizer='adam',
+                  loss='binary_crossentropy',
+                  metrics=['accuracy'])
+    return model
+
+model = CNN()
+model.fit(train_data[idx], train_labels[idx], nb_epoch=NB_EPOCH)
+preds = np.argmax(model.predict(test_data), axis=1)
+test_labels = np.argmax(test_labels, axis=1)
+print(accuracy_score(test_labels, preds))
+
 ```
 #### Determining Optimal Order  
 After determining optimal step size, for determining the optimal order, there are essentially two strategies for selecting the new order. One can choose the order `k + 1` either such that the local error estimate is minimal, or such that the new optimal step size is maximal.    
