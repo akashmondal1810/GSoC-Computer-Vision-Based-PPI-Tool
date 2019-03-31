@@ -102,6 +102,24 @@ def detect_faces(image_path):
     
 >> No of persons: 5
 ```
+##### For the Indicators 2 and 4 to 10
+The pretrained models of Cloud Vision API will help us with label detection for labels like refrigerator, television, vehicle etc. Detection result of the following image:
+
+![indian-coffee-house](https://user-images.githubusercontent.com/28530297/55287716-3a697600-53ca-11e9-9fc9-b952fee968f9.jpg)
+
+```json
+    {
+      "mid": "/m/07yv9",
+      "description": "Vehicle",
+      "score": 0.68692863,
+      "topicality": 0.68692863
+    }
+```
+But some time it fails to detect some labels. Cloud Vision API tends to ignore labels in images like:
+![inspiration-ideas-beautiful-indian-houses-interiors-with-home-interior-design-ideas-kerala-home-20](https://user-images.githubusercontent.com/28530297/55287994-6be44080-53ce-11e9-9ac8-57c61d05ebb7.jpg)
+Although there's refrigerator in it but it fails to detect. AutoML Vision Beta makes it possible for developers with limited machine learning expertise to train high-quality custom models. AutoML Vision will train a model that can scale as needed to adapt to demands. AutoML Vision offers higher model accuracy and faster time to create a production-ready model.
+
+
 ## 2. Variable Order Variable Step Size Multistep Methods   
 #### Determining Optimal Step Size  
 Staring multistep methods with order one and very small step sizes and therefore self-starting. Suppose after successful numerical integration until `x_n` if further step with step size `h_n` and order `k + 1` is taken, which yields the approximation `y_n+1` to `y(x_n+1)`.  For this step to be successful it must satisfy following equation   
